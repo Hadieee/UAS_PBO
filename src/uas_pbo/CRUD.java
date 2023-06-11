@@ -123,7 +123,7 @@ public class CRUD extends javax.swing.JFrame {
         btnLogout = new javax.swing.JButton();
         txtID = new javax.swing.JTextField();
         lblID = new javax.swing.JLabel();
-        txtWarna1 = new javax.swing.JTextField();
+        txtWarna = new javax.swing.JTextField();
         btnTambah1 = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -216,8 +216,8 @@ public class CRUD extends javax.swing.JFrame {
         lblID.setForeground(new java.awt.Color(102, 102, 102));
         lblID.setText("ID");
 
-        txtWarna1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        txtWarna1.setForeground(new java.awt.Color(102, 102, 102));
+        txtWarna.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        txtWarna.setForeground(new java.awt.Color(102, 102, 102));
 
         btnTambah1.setBackground(new java.awt.Color(0, 102, 102));
         btnTambah1.setForeground(new java.awt.Color(255, 255, 255));
@@ -251,7 +251,7 @@ public class CRUD extends javax.swing.JFrame {
                                         .addGap(194, 194, 194)))
                                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(lblWarna)
-                                    .addComponent(txtWarna1, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(txtWarna, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(jPanel3Layout.createSequentialGroup()
                                 .addComponent(jLabel7)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -289,7 +289,7 @@ public class CRUD extends javax.swing.JFrame {
                     .addComponent(lblWarna))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(txtWarna1)
+                    .addComponent(txtWarna)
                     .addComponent(txtID, javax.swing.GroupLayout.DEFAULT_SIZE, 34, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
                 .addComponent(lblNama)
@@ -443,7 +443,7 @@ public class CRUD extends javax.swing.JFrame {
         if (row >= 0) {
             txtID.setText(tblData.getValueAt(row, 0).toString());
             txtNama.setText(tblData.getValueAt(row, 1).toString());
-            txtCari.setText(tblData.getValueAt(row, 2).toString());
+            txtWarna.setText(tblData.getValueAt(row, 2).toString());
             comboBrand.setSelectedItem(tblData.getValueAt(row, 3).toString());
             
             int size = Integer.parseInt(tblData.getValueAt(row, 4).toString());
@@ -482,7 +482,7 @@ public class CRUD extends javax.swing.JFrame {
         
         int id = Integer.parseInt(txtID.getText());
         String nama = txtNama.getText();
-        String warna = txtCari.getText();
+        String warna = txtWarna.getText();
         String brand = comboBrand.getSelectedItem().toString();
         int size = (int) spinnerSize.getValue();
         String tipe = radioLCD.isSelected() ? "LCD" : "LED";
@@ -496,6 +496,7 @@ public class CRUD extends javax.swing.JFrame {
     public void clear() {
         txtID.setText("");
         txtNama.setText("");
+        txtWarna.setText("");
         txtCari.setText("");
         comboBrand.setSelectedIndex(0);
         spinnerSize.setValue(0);
@@ -526,7 +527,7 @@ public class CRUD extends javax.swing.JFrame {
         
         int id = Integer.parseInt(txtID.getText());
         String nama = txtNama.getText();
-        String warna = txtCari.getText();
+        String warna = txtWarna.getText();
         String brand = comboBrand.getSelectedItem().toString();
         int size = (int) spinnerSize.getValue();
         String tipe = radioLCD.isSelected() ? "LCD" : "LED";
@@ -569,6 +570,6 @@ public class CRUD extends javax.swing.JFrame {
     private javax.swing.JTextField txtCari;
     private javax.swing.JTextField txtID;
     private javax.swing.JTextField txtNama;
-    private javax.swing.JTextField txtWarna1;
+    private javax.swing.JTextField txtWarna;
     // End of variables declaration//GEN-END:variables
 }
